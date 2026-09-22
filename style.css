@@ -17,11 +17,15 @@ nav {
   width: 19px;
   height: 20px;
   transform: scale(7.2);
+  padding-top: 5px;
 }
 img {
   overflow-clip-margin: content-box;
   overflow: clip;
+  math-depth: 100%;
+  height: auto;
 }
+
 .nav__logo--title {
   font-weight: 900;
   font-size: 24px;
@@ -29,6 +33,34 @@ img {
   padding: 2px;
   letter-spacing: 0.6 px;
   width: 60px;
+}
+.nav__link--primary {
+  color: rgb(255, 255, 255);
+  background-color: rgb(43, 22, 85);
+  line-height: auto;
+  width: auto;
+  margin: 0px 0px 0px;
+  border-radius: 9999px;
+  border-width: medium;
+  border-style: none;
+  border-color: currentcolor;
+  border-image: none;
+  transition: 300ms;
+  background-size: 25%;
+  padding: 20px 20px;
+  position: relative;
+  text-align: center;
+  padding-bottom: -20px;
+}
+.nav__link {
+  font-size: 14px;
+  font-weight: 600;
+  padding-top: -10%;
+  letter-spacing: 0.35px;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: 300ms;
+  text-decoration: none;
 }
 .nav__links {
   display: flex;
@@ -98,7 +130,7 @@ section {
   align-items: center;
 }
 .nat__logo {
-  width: 159px;
+  width: 450px;
 }
 section.landing {
   background-color: beige;
@@ -284,6 +316,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 80px;
 }
 
 .quality__description {
@@ -327,7 +360,7 @@ section {
   display: block;
   unicode-bidi: isolate;
 }
-#steps >.section__title {
+#steps > .section__title {
   align-items: left;
 }
 #steps .row {
@@ -504,12 +537,9 @@ section {
 }
 .value__title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
-.value__img {
-  width: 20px;
-  height: 20px;
-}
+
 .value:nth-child(1) .value__img--wrapper {
   background-color: #9ae6b4;
 }
@@ -523,9 +553,19 @@ section {
   align-items: center;
   width: 36px;
   height: 36px;
+  margin-left: 3px;
+  max-width: 70%;
+  column-gap: 0;
+  size-adjust: unset;
+}
+.value-grid {
+  display: grid;
+  gap: 1 rem;
+  grid-template-columns: auto 1fr;
+  grid-area: span;
 }
 .value__name {
-  margin-left: 12px;
+  text-align: left;
   font-size: 20px;
   font-weight: bold;
   color: #243e63;
@@ -829,7 +869,7 @@ section #testimonials {
 .testimonial__details {
   margin-left: 24px;
 }
-.testimonial__img{
+.testimonial__img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -1119,6 +1159,11 @@ footer {
     margin-bottom: 0px;
     line-height: 1.5;
   }
+  .header__cutomers {
+    margin-top: 16px;
+    padding-right: 128px;
+    width: 350px;
+  }
   .header__customers--title {
     font-size: 14px;
     letter-spacing: 0.05em;
@@ -1229,3 +1274,124 @@ footer {
 * {
   outline: none;
 }
+@media (max-width: 1280px) {
+  header .row {
+    align-items: flex-end;
+  }
+
+  .steps__grid {
+    height: 5rem;
+    width: 5rem;
+    bottom: -50px;
+  }
+  h1 {
+    font-size: 36px;
+    color: #1a202c;
+    line-height: 1.25;
+  }
+  .header__description--para {
+    font-size: 16px;
+  }
+  .header__customers {
+    padding-right: 64px;
+  }
+  .header__img--wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .header__img {
+    max-width: 512px;
+  }
+  .plan__button {
+    max-width: none;
+  }
+
+  .plan__bottom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .testimonials__img {
+    width: 40%;
+  }
+  .testimonials__description {
+    width: calc(100% - 40%);
+  }
+}
+@media (max-width: 1024px) {
+  .nav__links {
+    display: none;
+  }
+  .btn__menu {
+    display: block;
+  }
+  header .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__description,
+  .header__img--wrapper {
+    width: 100%;
+    max-width: 512px;
+    margin: 0 auto;
+  }
+  .header__description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .header__description--para {
+    margin: 20px 0;
+  }
+  .header__customers {
+    padding-right: 0px;
+  }
+  .header__customers--title,
+  .header__img--wrapper {
+    margin-top: 48px;
+  }
+  .features {
+    max-width: 768px;
+  }
+  .feature {
+    width: calc(50%);
+  }
+  .feature__title {
+    line-height: 1;
+  }
+  .feature__row {
+    padding: 32px 8px;
+    margin: 0 16px;
+  }
+  .feature__para {
+    max-width: none;
+  }
+  .section__para {
+    font-size: 16px;
+  }
+  .section__title {
+    font-size: 36px;
+  }
+  .quality__description {
+    margin-right: 0px;
+    padding-right: 48px;
+  }
+  .value {
+    margin-top: 2.5rem;
+  }
+
+  .values__list {
+    max-width: 20rem;
+    flex-direction: column;
+  }
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan {
+    margin-right: 0px;
+  }
